@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  TwitterWebViewController.h
 //  Improv Toolbox
 //
 //  Created by Sydney Richardson on 11/20/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface TwitterWebViewController : UIViewController
 
 @end
-

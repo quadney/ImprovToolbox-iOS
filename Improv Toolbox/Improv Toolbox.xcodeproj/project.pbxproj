@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C965FAD11A1E4EF0009AA35A /* ImprovTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C965FAD01A1E4EF0009AA35A /* ImprovTabBarController.m */; };
+		C965FAD41A1E5ECD009AA35A /* SuggestionatorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C965FAD31A1E5ECD009AA35A /* SuggestionatorHelper.m */; };
 		C9C6AE6A1A1DB70C00C26D56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE691A1DB70C00C26D56 /* main.m */; };
 		C9C6AE6D1A1DB70D00C26D56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE6C1A1DB70D00C26D56 /* AppDelegate.m */; };
-		C9C6AE701A1DB70D00C26D56 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE6F1A1DB70D00C26D56 /* FirstViewController.m */; };
-		C9C6AE731A1DB70D00C26D56 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE721A1DB70D00C26D56 /* SecondViewController.m */; };
 		C9C6AE761A1DB70D00C26D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C6AE741A1DB70D00C26D56 /* Main.storyboard */; };
 		C9C6AE781A1DB70D00C26D56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C6AE771A1DB70D00C26D56 /* Images.xcassets */; };
 		C9C6AE7B1A1DB70D00C26D56 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C6AE791A1DB70D00C26D56 /* LaunchScreen.xib */; };
 		C9C6AE871A1DB70E00C26D56 /* Improv_ToolboxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE861A1DB70E00C26D56 /* Improv_ToolboxTests.m */; };
+		C9C6AE921A1DBBA500C26D56 /* SuggestionatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE911A1DBBA500C26D56 /* SuggestionatorViewController.m */; };
+		C9C6AE9B1A1DBBD900C26D56 /* HalfLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE9A1A1DBBD900C26D56 /* HalfLifeViewController.m */; };
+		C9C6AE9E1A1DBC1B00C26D56 /* TwitterWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE9D1A1DBC1B00C26D56 /* TwitterWebViewController.m */; };
+		C9C6AEA41A1DC7AA00C26D56 /* SoundboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AEA31A1DC7AA00C26D56 /* SoundboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +32,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C965FACF1A1E4EF0009AA35A /* ImprovTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImprovTabBarController.h; sourceTree = "<group>"; };
+		C965FAD01A1E4EF0009AA35A /* ImprovTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImprovTabBarController.m; sourceTree = "<group>"; };
+		C965FAD21A1E5ECD009AA35A /* SuggestionatorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionatorHelper.h; sourceTree = "<group>"; };
+		C965FAD31A1E5ECD009AA35A /* SuggestionatorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionatorHelper.m; sourceTree = "<group>"; };
 		C9C6AE641A1DB70C00C26D56 /* Improv Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improv Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C6AE681A1DB70C00C26D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9C6AE691A1DB70C00C26D56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9C6AE6B1A1DB70D00C26D56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C9C6AE6C1A1DB70D00C26D56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C9C6AE6E1A1DB70D00C26D56 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		C9C6AE6F1A1DB70D00C26D56 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		C9C6AE711A1DB70D00C26D56 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		C9C6AE721A1DB70D00C26D56 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		C9C6AE751A1DB70D00C26D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9C6AE771A1DB70D00C26D56 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9C6AE7A1A1DB70D00C26D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C9C6AE801A1DB70D00C26D56 /* Improv ToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Improv ToolboxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C6AE851A1DB70E00C26D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9C6AE861A1DB70E00C26D56 /* Improv_ToolboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Improv_ToolboxTests.m; sourceTree = "<group>"; };
+		C9C6AE901A1DBBA500C26D56 /* SuggestionatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionatorViewController.h; sourceTree = "<group>"; };
+		C9C6AE911A1DBBA500C26D56 /* SuggestionatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionatorViewController.m; sourceTree = "<group>"; };
+		C9C6AE991A1DBBD900C26D56 /* HalfLifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfLifeViewController.h; sourceTree = "<group>"; };
+		C9C6AE9A1A1DBBD900C26D56 /* HalfLifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfLifeViewController.m; sourceTree = "<group>"; };
+		C9C6AE9C1A1DBC1B00C26D56 /* TwitterWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterWebViewController.h; sourceTree = "<group>"; };
+		C9C6AE9D1A1DBC1B00C26D56 /* TwitterWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterWebViewController.m; sourceTree = "<group>"; };
+		C9C6AEA21A1DC7AA00C26D56 /* SoundboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundboardViewController.h; sourceTree = "<group>"; };
+		C9C6AEA31A1DC7AA00C26D56 /* SoundboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,14 +98,22 @@
 			children = (
 				C9C6AE6B1A1DB70D00C26D56 /* AppDelegate.h */,
 				C9C6AE6C1A1DB70D00C26D56 /* AppDelegate.m */,
-				C9C6AE6E1A1DB70D00C26D56 /* FirstViewController.h */,
-				C9C6AE6F1A1DB70D00C26D56 /* FirstViewController.m */,
-				C9C6AE711A1DB70D00C26D56 /* SecondViewController.h */,
-				C9C6AE721A1DB70D00C26D56 /* SecondViewController.m */,
 				C9C6AE741A1DB70D00C26D56 /* Main.storyboard */,
 				C9C6AE771A1DB70D00C26D56 /* Images.xcassets */,
 				C9C6AE791A1DB70D00C26D56 /* LaunchScreen.xib */,
 				C9C6AE671A1DB70C00C26D56 /* Supporting Files */,
+				C9C6AE901A1DBBA500C26D56 /* SuggestionatorViewController.h */,
+				C9C6AE911A1DBBA500C26D56 /* SuggestionatorViewController.m */,
+				C9C6AE991A1DBBD900C26D56 /* HalfLifeViewController.h */,
+				C9C6AE9A1A1DBBD900C26D56 /* HalfLifeViewController.m */,
+				C9C6AE9C1A1DBC1B00C26D56 /* TwitterWebViewController.h */,
+				C9C6AE9D1A1DBC1B00C26D56 /* TwitterWebViewController.m */,
+				C9C6AEA21A1DC7AA00C26D56 /* SoundboardViewController.h */,
+				C9C6AEA31A1DC7AA00C26D56 /* SoundboardViewController.m */,
+				C965FACF1A1E4EF0009AA35A /* ImprovTabBarController.h */,
+				C965FAD01A1E4EF0009AA35A /* ImprovTabBarController.m */,
+				C965FAD21A1E5ECD009AA35A /* SuggestionatorHelper.h */,
+				C965FAD31A1E5ECD009AA35A /* SuggestionatorHelper.m */,
 			);
 			path = "Improv Toolbox";
 			sourceTree = "<group>";
@@ -224,10 +244,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C6AE731A1DB70D00C26D56 /* SecondViewController.m in Sources */,
+				C9C6AE9E1A1DBC1B00C26D56 /* TwitterWebViewController.m in Sources */,
+				C9C6AEA41A1DC7AA00C26D56 /* SoundboardViewController.m in Sources */,
+				C9C6AE921A1DBBA500C26D56 /* SuggestionatorViewController.m in Sources */,
 				C9C6AE6D1A1DB70D00C26D56 /* AppDelegate.m in Sources */,
-				C9C6AE701A1DB70D00C26D56 /* FirstViewController.m in Sources */,
+				C9C6AE9B1A1DBBD900C26D56 /* HalfLifeViewController.m in Sources */,
 				C9C6AE6A1A1DB70C00C26D56 /* main.m in Sources */,
+				C965FAD11A1E4EF0009AA35A /* ImprovTabBarController.m in Sources */,
+				C965FAD41A1E5ECD009AA35A /* SuggestionatorHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +444,7 @@
 				C9C6AE8C1A1DB70E00C26D56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9C6AE8D1A1DB70E00C26D56 /* Build configuration list for PBXNativeTarget "Improv ToolboxTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +453,7 @@
 				C9C6AE8F1A1DB70E00C26D56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

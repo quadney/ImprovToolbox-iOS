@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  ImprovTabBarController.h
 //  Improv Toolbox
 //
 //  Created by Sydney Richardson on 11/20/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface ImprovTabBarController : UITabBarController
 
 @end
-
