@@ -1,4 +1,4 @@
-ImprovTookbox-iOS
+ImprovToolbox-iOS
 =================
 
 Improv Toolbox iOS Application
