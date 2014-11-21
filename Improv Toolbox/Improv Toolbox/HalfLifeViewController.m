@@ -14,6 +14,9 @@
 - (IBAction)halfTimer:(id)sender;
 - (IBAction)resetButton:(id)sender;
 
+@property (strong, nonatomic) NSTimer *timer;
+@property double timerValue;
+
 @end
 
 @implementation HalfLifeViewController
@@ -21,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.timerValue = 60.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,22 +32,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)startTimer:(id)sender {
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                  target:self
+                                                selector:@selector(updateTimerLabel:)
+                                                userInfo:nil
+                                                 repeats:YES];
 }
 
 - (IBAction)halfTimer:(id)sender {
+    [self killTimer];
+    self.timerValue /= 2;
+    [self.timeLabel setText:[NSString stringWithFormat:@"%f", self.timerValue]];
 }
 
 - (IBAction)resetButton:(id)sender {
+    [self killTimer];
+    [self resetTimerValue];
+    [self.timeLabel setText:[NSString stringWithFormat:@"%f", self.timerValue]];
 }
+
+- (void)resetTimerValue
+{
+    [self killTimer];
+    self.timerValue = 60.0;
+    [self.timeLabel setText:[NSString stringWithFormat:@"%f", self.timerValue]];
+}
+
+- (void)updateTimerLabel:(id)sender
+{
+    [self.timeLabel setText:[NSString stringWithFormat:@"%f", self.timerValue]];
+}
+
+- (void)killTimer{
+    if(self.timer){
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
 @end
