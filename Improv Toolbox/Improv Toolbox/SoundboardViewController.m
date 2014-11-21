@@ -89,8 +89,8 @@
 - (void)playSound:(NSString *)trackTitle
 {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:trackTitle ofType:@"mp3"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
+    NSURL *url = [NSURL fileURLWithPath:soundPath];
+    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
     [player play];
 }
 @end
