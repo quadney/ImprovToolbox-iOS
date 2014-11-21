@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		C965FAD11A1E4EF0009AA35A /* ImprovTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C965FAD01A1E4EF0009AA35A /* ImprovTabBarController.m */; };
 		C965FAD41A1E5ECD009AA35A /* SuggestionatorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C965FAD31A1E5ECD009AA35A /* SuggestionatorHelper.m */; };
+		C965FAD61A1E7C54009AA35A /* suggestionator.json in Resources */ = {isa = PBXBuildFile; fileRef = C965FAD51A1E7C54009AA35A /* suggestionator.json */; };
+		C965FAE31A1ED741009AA35A /* airhorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FAD71A1ED741009AA35A /* airhorn.mp3 */; };
+		C965FAE41A1ED741009AA35A /* beat1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FAD81A1ED741009AA35A /* beat1.mp3 */; };
+		C965FAE51A1ED741009AA35A /* beat2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FAD91A1ED741009AA35A /* beat2.mp3 */; };
+		C965FAE61A1ED741009AA35A /* beat3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FADA1A1ED741009AA35A /* beat3.mp3 */; };
+		C965FAE71A1ED741009AA35A /* buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FADB1A1ED741009AA35A /* buzzer.mp3 */; };
+		C965FAE81A1ED741009AA35A /* countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FADC1A1ED741009AA35A /* countdown.mp3 */; };
+		C965FAE91A1ED741009AA35A /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FADD1A1ED741009AA35A /* ding.mp3 */; };
+		C965FAEA1A1ED741009AA35A /* doorbell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FADE1A1ED741009AA35A /* doorbell.mp3 */; };
+		C965FAEB1A1ED741009AA35A /* knock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FADF1A1ED741009AA35A /* knock.mp3 */; };
+		C965FAEC1A1ED741009AA35A /* phone1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FAE01A1ED741009AA35A /* phone1.mp3 */; };
+		C965FAED1A1ED741009AA35A /* phone2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FAE11A1ED741009AA35A /* phone2.mp3 */; };
+		C965FAEE1A1ED741009AA35A /* yay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C965FAE21A1ED741009AA35A /* yay.mp3 */; };
 		C9C6AE6A1A1DB70C00C26D56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE691A1DB70C00C26D56 /* main.m */; };
 		C9C6AE6D1A1DB70D00C26D56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6AE6C1A1DB70D00C26D56 /* AppDelegate.m */; };
 		C9C6AE761A1DB70D00C26D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C6AE741A1DB70D00C26D56 /* Main.storyboard */; };
@@ -36,6 +49,19 @@
 		C965FAD01A1E4EF0009AA35A /* ImprovTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImprovTabBarController.m; sourceTree = "<group>"; };
 		C965FAD21A1E5ECD009AA35A /* SuggestionatorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionatorHelper.h; sourceTree = "<group>"; };
 		C965FAD31A1E5ECD009AA35A /* SuggestionatorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionatorHelper.m; sourceTree = "<group>"; };
+		C965FAD51A1E7C54009AA35A /* suggestionator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suggestionator.json; sourceTree = "<group>"; };
+		C965FAD71A1ED741009AA35A /* airhorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = airhorn.mp3; sourceTree = "<group>"; };
+		C965FAD81A1ED741009AA35A /* beat1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beat1.mp3; sourceTree = "<group>"; };
+		C965FAD91A1ED741009AA35A /* beat2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beat2.mp3; sourceTree = "<group>"; };
+		C965FADA1A1ED741009AA35A /* beat3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beat3.mp3; sourceTree = "<group>"; };
+		C965FADB1A1ED741009AA35A /* buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buzzer.mp3; sourceTree = "<group>"; };
+		C965FADC1A1ED741009AA35A /* countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdown.mp3; sourceTree = "<group>"; };
+		C965FADD1A1ED741009AA35A /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
+		C965FADE1A1ED741009AA35A /* doorbell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = doorbell.mp3; sourceTree = "<group>"; };
+		C965FADF1A1ED741009AA35A /* knock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knock.mp3; sourceTree = "<group>"; };
+		C965FAE01A1ED741009AA35A /* phone1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = phone1.mp3; sourceTree = "<group>"; };
+		C965FAE11A1ED741009AA35A /* phone2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = phone2.mp3; sourceTree = "<group>"; };
+		C965FAE21A1ED741009AA35A /* yay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yay.mp3; sourceTree = "<group>"; };
 		C9C6AE641A1DB70C00C26D56 /* Improv Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improv Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C6AE681A1DB70C00C26D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9C6AE691A1DB70C00C26D56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +147,19 @@
 		C9C6AE671A1DB70C00C26D56 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C965FAD71A1ED741009AA35A /* airhorn.mp3 */,
+				C965FAD81A1ED741009AA35A /* beat1.mp3 */,
+				C965FAD91A1ED741009AA35A /* beat2.mp3 */,
+				C965FADA1A1ED741009AA35A /* beat3.mp3 */,
+				C965FADB1A1ED741009AA35A /* buzzer.mp3 */,
+				C965FADC1A1ED741009AA35A /* countdown.mp3 */,
+				C965FADD1A1ED741009AA35A /* ding.mp3 */,
+				C965FADE1A1ED741009AA35A /* doorbell.mp3 */,
+				C965FADF1A1ED741009AA35A /* knock.mp3 */,
+				C965FAE01A1ED741009AA35A /* phone1.mp3 */,
+				C965FAE11A1ED741009AA35A /* phone2.mp3 */,
+				C965FAE21A1ED741009AA35A /* yay.mp3 */,
+				C965FAD51A1E7C54009AA35A /* suggestionator.json */,
 				C9C6AE681A1DB70C00C26D56 /* Info.plist */,
 				C9C6AE691A1DB70C00C26D56 /* main.m */,
 			);
@@ -224,9 +263,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C965FAE41A1ED741009AA35A /* beat1.mp3 in Resources */,
+				C965FAE31A1ED741009AA35A /* airhorn.mp3 in Resources */,
+				C965FAE71A1ED741009AA35A /* buzzer.mp3 in Resources */,
 				C9C6AE761A1DB70D00C26D56 /* Main.storyboard in Resources */,
+				C965FAD61A1E7C54009AA35A /* suggestionator.json in Resources */,
+				C965FAEA1A1ED741009AA35A /* doorbell.mp3 in Resources */,
 				C9C6AE7B1A1DB70D00C26D56 /* LaunchScreen.xib in Resources */,
+				C965FAEC1A1ED741009AA35A /* phone1.mp3 in Resources */,
+				C965FAEE1A1ED741009AA35A /* yay.mp3 in Resources */,
+				C965FAE91A1ED741009AA35A /* ding.mp3 in Resources */,
 				C9C6AE781A1DB70D00C26D56 /* Images.xcassets in Resources */,
+				C965FAED1A1ED741009AA35A /* phone2.mp3 in Resources */,
+				C965FAE61A1ED741009AA35A /* beat3.mp3 in Resources */,
+				C965FAEB1A1ED741009AA35A /* knock.mp3 in Resources */,
+				C965FAE81A1ED741009AA35A /* countdown.mp3 in Resources */,
+				C965FAE51A1ED741009AA35A /* beat2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
