@@ -10,6 +10,18 @@
 
 @interface SuggestionatorHelper : NSObject
 
+@property (strong, nonatomic) NSArray *objects;
+@property (strong, nonatomic) NSArray *relationships;
+@property (strong, nonatomic) NSArray *adjectives;
+@property (strong, nonatomic) NSArray *locations;
+@property (strong, nonatomic) NSArray *occupations;
+@property (strong, nonatomic) NSArray *events;
+@property (strong, nonatomic) NSArray *genres;
+@property (strong, nonatomic) NSArray *persons;
+@property (strong, nonatomic) NSArray *emotions;
+
+-(void)parseJsonData:(NSData *)data;
+
 -(NSString *)getObject;
 -(NSString *)getRelationship;
 -(NSString *)getLocation;

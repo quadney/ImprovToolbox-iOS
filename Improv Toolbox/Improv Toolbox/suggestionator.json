@@ -1,5 +1,4 @@
-[  
-   {  
+{
       "object":[  
          "Aardvark",
          "Albatross",
@@ -872,7 +871,7 @@
             "wife"
          ]
       ],
-      "adj":[  
+      "adjective":[  
          "abhorrent",
          "abrasive",
          "absent-minded",
@@ -2327,4 +2326,3 @@
          "Worry"
       ]
    }
-]

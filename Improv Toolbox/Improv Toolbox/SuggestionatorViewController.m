@@ -7,8 +7,21 @@
 //
 
 #import "SuggestionatorViewController.h"
+#import "SuggestionatorHelper.h"
 
 @interface SuggestionatorViewController ()
+
+@property (strong, nonatomic) SuggestionatorHelper *helper;
+@property (weak, nonatomic) IBOutlet UILabel *suggestionLabel;
+- (IBAction)objectButton:(id)sender;
+- (IBAction)relationshipButton:(id)sender;
+- (IBAction)locationButton:(id)sender;
+- (IBAction)occupationButton:(id)sender;
+- (IBAction)eventButton:(id)sender;
+- (IBAction)genreButton:(id)sender;
+- (IBAction)personButton:(id)sender;
+- (IBAction)emotionButton:(id)sender;
+- (IBAction)oddballButton:(id)sender;
 
 @end
 
@@ -16,22 +29,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //parse the JSON suggestionator stuff
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"suggestionator" ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
+    
+    self.helper = [[SuggestionatorHelper alloc] init];
+    [self.helper parseJsonData:jsonData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)objectButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getObject]];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)relationshipButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getRelationship]];
 }
-*/
 
+- (IBAction)locationButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getLocation]];
+}
+
+- (IBAction)occupationButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getOccupation]];
+}
+
+- (IBAction)eventButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getEvent]];
+}
+
+- (IBAction)genreButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getGenre]];
+}
+
+- (IBAction)personButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getPerson]];
+}
+
+- (IBAction)emotionButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getEmotion]];
+}
+
+- (IBAction)oddballButton:(id)sender {
+    [self.suggestionLabel setText:[self.helper getOddball]];
+}
 @end
