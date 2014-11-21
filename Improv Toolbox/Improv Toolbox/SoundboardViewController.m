@@ -9,7 +9,8 @@
 #import "SoundboardViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface SoundboardViewController ()
+@interface SoundboardViewController () <AVAudioPlayerDelegate>
+@property AVAudioPlayer *player;
 - (IBAction)volumeSlider:(id)sender;
 - (IBAction)yaySound:(id)sender;
 - (IBAction)airhornSound:(id)sender;
@@ -90,7 +91,12 @@
 {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:trackTitle ofType:@"mp3"];
     NSURL *url = [NSURL fileURLWithPath:soundPath];
-    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
-    [player play];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
+    [self.player setDelegate:self];
+    [self.player setVolume:1.0];
+    [self.player play];
+}
+
+- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
 }
 @end
