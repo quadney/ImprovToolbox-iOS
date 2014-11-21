@@ -9,6 +9,10 @@
 #import "HalfLifeViewController.h"
 
 @interface HalfLifeViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+- (IBAction)startTimer:(id)sender;
+- (IBAction)halfTimer:(id)sender;
+- (IBAction)resetButton:(id)sender;
 
 @end
 
@@ -34,4 +38,12 @@
 }
 */
 
+- (IBAction)startTimer:(id)sender {
+}
+
+- (IBAction)halfTimer:(id)sender {
+}
+
+- (IBAction)resetButton:(id)sender {
+}
 @end
