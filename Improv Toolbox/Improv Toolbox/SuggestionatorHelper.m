@@ -31,46 +31,47 @@
 
 -(NSString *)getObject
 {
-    return [self.objects objectAtIndex:arc4random_uniform([self.objects count])];
+    return [self.objects objectAtIndex:arc4random_uniform((int)[self.objects count])];
 }
 
 -(NSString *)getRelationship
 {
     //get relationship and two adjectives
-    NSArray *relationship = [self.relationships objectAtIndex:arc4random_uniform([self.relationships count])];
-    NSString *adjective1 = [self.adjectives objectAtIndex:arc4random_uniform([self.adjectives count])];
-    NSString *adjective2 = [self.adjectives objectAtIndex:arc4random_uniform([self.adjectives count])];
+    NSArray *relationship = [self.relationships objectAtIndex:arc4random_uniform((int)[self.relationships count])];
+    NSString *adjective1 = [self.adjectives objectAtIndex:arc4random_uniform((int)[self.adjectives count])];
+    NSString *adjective2 = [self.adjectives objectAtIndex:arc4random_uniform((int)[self.adjectives count])];
     //String result = "A "+ ad1 + " " + relationship[x][0] + " and their " + ad2 + " " + relationship[x][1];
     return [NSString stringWithFormat:@"A %@ %@ and their %@ %@", adjective1, [relationship objectAtIndex:0], adjective2, [relationship objectAtIndex:1]];
 
 }
 -(NSString *)getLocation
 {
-    return [self.locations objectAtIndex:arc4random_uniform([self.locations count])];
+    return [self.locations objectAtIndex:arc4random_uniform((int)[self.locations count])];
 }
 -(NSString *)getOccupation
 {
-    return [self.occupations objectAtIndex:arc4random_uniform([self.occupations count])];
+    return [self.occupations objectAtIndex:arc4random_uniform((int)[self.occupations count])];
 }
 -(NSString *)getEvent
 {
-    return [self.events objectAtIndex:arc4random_uniform([self.events count])];
+    return [self.events objectAtIndex:arc4random_uniform((int)[self.events count])];
 }
 -(NSString *)getGenre
 {
-    return [self.genres objectAtIndex:arc4random_uniform([self.genres count])];
+    return [self.genres objectAtIndex:arc4random_uniform((int)[self.genres count])];
 }
 -(NSString *)getPerson
 {
-    return [self.persons objectAtIndex:arc4random_uniform([self.persons count])];
+    return [self.persons objectAtIndex:arc4random_uniform((int)[self.persons count])];
 }
 -(NSString *)getEmotion
 {
-    return [self.emotions objectAtIndex:arc4random_uniform([self.emotions count])];
+    return [self.emotions objectAtIndex:arc4random_uniform((int)[self.emotions count])];
 }
 -(NSString *)getOddball
 {
-    int coin = arc4random();
+    long coin = arc4random();
+    NSLog(@"coin value: %lu", coin);
     NSString *subject;
     //random person or occupation
     if (coin > .5) {
