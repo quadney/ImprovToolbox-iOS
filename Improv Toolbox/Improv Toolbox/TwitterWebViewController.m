@@ -9,6 +9,7 @@
 #import "TwitterWebViewController.h"
 
 @interface TwitterWebViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *twitterPageWebView;
 
 @end
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString *twitterURL = @"https://twitter.com/gvilleimprov";
+    NSURL *url = [NSURL URLWithString:twitterURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.twitterPageWebView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {

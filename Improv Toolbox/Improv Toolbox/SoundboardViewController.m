@@ -8,10 +8,13 @@
 
 #import "SoundboardViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <iAd/iAd.h>
 
-@interface SoundboardViewController () <AVAudioPlayerDelegate>
+@interface SoundboardViewController () <AVAudioPlayerDelegate, ADBannerViewDelegate>
+
 @property AVAudioPlayer *player;
-- (IBAction)volumeSlider:(id)sender;
+@property float volume;
+
 - (IBAction)yaySound:(id)sender;
 - (IBAction)airhornSound:(id)sender;
 - (IBAction)knockSound:(id)sender;
@@ -25,6 +28,11 @@
 - (IBAction)beat2Sound:(id)sender;
 - (IBAction)beat3Sound:(id)sender;
 
+@property (weak, nonatomic) IBOutlet ADBannerView *adView;
+@property (nonatomic, strong) NSTimer *adTimer;
+@property (nonatomic) int secondsElapsed;
+@property (nonatomic) BOOL pauseTimeCounting;
+
 @end
 
 @implementation SoundboardViewController
@@ -33,11 +41,78 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //set up volume to current volume control? is this even possible with iOS?
+    //set up the iAd, make this the delegate
+    self.adView.delegate = self;
+    // Initially hide the ad banner.
+    self.adView.alpha = 0.0;
+    
+    // Start the timer for the ads to be changed
+    self.adTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                    target:self
+                                                  selector:@selector(showTimerMessage)
+                                                  userInfo:nil
+                                                   repeats:YES];
+    
+    // Set the initial value for the elapsed seconds.
+    self.secondsElapsed = 0;
+    
+    //set up volume for the sounds
+    //default 1.0
+    self.volume = 1.0;
+    
+    
 }
 
-- (IBAction)volumeSlider:(id)sender {
+- (void)viewWillDisappear:(BOOL)animated {
+    //stop the sound from playing
+    [self.player stop];
 }
+
+#pragma mark - iAd methods
+
+- (void)bannerViewWillLoadAd:(ADBannerView *)banner {
+    NSLog(@"Ad Banner will load ad.");
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    NSLog(@"Ad Banner did load ad.");
+    
+    // Show the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adView.alpha = 1.0;
+    }];
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
+    NSLog(@"Ad Banner action is about to begin.");
+    
+    self.pauseTimeCounting = YES;
+    
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
+    NSLog(@"Ad Banner action did finish");
+    
+    self.pauseTimeCounting = NO;
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+    
+    // failed to find an advertisement to display
+    // hide the banner
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adView.alpha = 0.0;
+    }];
+}
+
+- (void)showTimerMessage {
+    if (!self.pauseTimeCounting)
+        self.secondsElapsed++;
+}
+
+#pragma mark - Sound playing methods
 
 - (IBAction)yaySound:(id)sender {
     [self playSound:@"yay"];
@@ -97,6 +172,7 @@
     [self.player play];
 }
 
-- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    
 }
 @end

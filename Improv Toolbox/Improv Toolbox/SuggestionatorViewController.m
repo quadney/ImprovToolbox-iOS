@@ -8,8 +8,9 @@
 
 #import "SuggestionatorViewController.h"
 #import "SuggestionatorHelper.h"
+#import <iAd/iAd.h>
 
-@interface SuggestionatorViewController ()
+@interface SuggestionatorViewController () <ADBannerViewDelegate>
 
 @property (strong, nonatomic) SuggestionatorHelper *helper;
 @property (weak, nonatomic) IBOutlet UILabel *suggestionLabel;
@@ -23,12 +24,33 @@
 - (IBAction)emotionButton:(id)sender;
 - (IBAction)oddballButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet ADBannerView *adView;
+@property (nonatomic, strong) NSTimer *adTimer;
+@property (nonatomic) int secondsElapsed;
+@property (nonatomic) BOOL pauseTimeCounting;
+
 @end
 
 @implementation SuggestionatorViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //set up the iAd, make this the delegate
+    self.adView.delegate = self;
+    // Initially hide the ad banner.
+    self.adView.alpha = 0.0;
+    
+    // Start the timer for the ads to be changed
+    self.adTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                    target:self
+                                                  selector:@selector(showTimerMessage)
+                                                  userInfo:nil
+                                                   repeats:YES];
+    
+    // Set the initial value for the elapsed seconds.
+    self.secondsElapsed = 0;
+
     
     //parse the JSON suggestionator stuff
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"suggestionator" ofType:@"json"];
@@ -37,6 +59,8 @@
     self.helper = [[SuggestionatorHelper alloc] init];
     [self.helper parseJsonData:jsonData];
 }
+
+#pragma mark - Button Response methods
 
 - (IBAction)objectButton:(id)sender {
     [self.suggestionLabel setText:[self.helper getObject]];
@@ -73,4 +97,50 @@
 - (IBAction)oddballButton:(id)sender {
     [self.suggestionLabel setText:[self.helper getOddball]];
 }
+
+#pragma mark - iAd methods
+
+- (void)bannerViewWillLoadAd:(ADBannerView *)banner {
+    NSLog(@"Ad Banner will load ad.");
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    NSLog(@"Ad Banner did load ad.");
+    
+    // Show the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adView.alpha = 1.0;
+    }];
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
+    NSLog(@"Ad Banner action is about to begin.");
+    
+    self.pauseTimeCounting = YES;
+    
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
+    NSLog(@"Ad Banner action did finish");
+    
+    self.pauseTimeCounting = NO;
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+    
+    // failed to find an advertisement to display
+    // hide the banner
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adView.alpha = 0.0;
+    }];
+}
+
+- (void)showTimerMessage {
+    if (!self.pauseTimeCounting)
+        self.secondsElapsed++;
+}
+
+
 @end
