@@ -45,6 +45,12 @@
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"buzzer" ofType:@"mp3"]];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
     [self.player setDelegate:self];
+    
+    self.navigationController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"About"
+                                                                                                   style:UIBarButtonItemStylePlain
+                                                                                                  target:self
+                                                                                                  action:@selector(aboutHalfLIfe:)];
+    NSLog(@"Navigation bar items: %@", [self.navigationController.navigationBar items]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +88,17 @@
     
     // update the timer label
     [self updateTimerLabel];
+}
+
+- (void)aboutHalfLIfe:(id)sender {
+    // display a help alert dialog box
+    UIAlertView *aboutHalfLife = [[UIAlertView alloc] initWithTitle:@"How to play Half Life"
+                                                            message:@"Players act out a scene for a minute. When the timer ends, act out the SAME SCENE again in half the time.Continue this until the players act out the scene in 1.5 seconds, then take down the scene."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Got it"
+                                                  otherButtonTitles:nil];
+    
+    [aboutHalfLife show];
 }
 
 - (void)updateTimer:(id)sender {

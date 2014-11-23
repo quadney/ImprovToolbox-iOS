@@ -30,6 +30,7 @@
                 <tabBarController title="Improv Toolbox" id="49e-Tb-3d3" customClass="ImprovTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Improv Toolbox" id="iek-Im-cEY"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
