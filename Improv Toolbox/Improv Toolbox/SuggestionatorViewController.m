@@ -101,12 +101,9 @@
 #pragma mark - iAd methods
 
 - (void)bannerViewWillLoadAd:(ADBannerView *)banner {
-    NSLog(@"Ad Banner will load ad.");
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    NSLog(@"Ad Banner did load ad.");
-    
     // Show the ad banner.
     [UIView animateWithDuration:0.5 animations:^{
         self.adView.alpha = 1.0;
@@ -114,16 +111,12 @@
 }
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
-    NSLog(@"Ad Banner action is about to begin.");
-    
     self.pauseTimeCounting = YES;
     
     return YES;
 }
 
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
-    NSLog(@"Ad Banner action did finish");
-    
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner {    
     self.pauseTimeCounting = NO;
 }
 

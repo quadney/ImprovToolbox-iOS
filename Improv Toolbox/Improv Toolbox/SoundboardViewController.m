@@ -56,6 +56,12 @@
     // Set the initial value for the elapsed seconds.
     self.secondsElapsed = 0;
     
+    //set up the audio thing
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"airhorn" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:soundPath];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
+    [self.player setDelegate:self];
+    
     //set up volume for the sounds
     //default 1.0
     self.volume = 1.0;
@@ -71,11 +77,9 @@
 #pragma mark - iAd methods
 
 - (void)bannerViewWillLoadAd:(ADBannerView *)banner {
-    NSLog(@"Ad Banner will load ad.");
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    NSLog(@"Ad Banner did load ad.");
     
     // Show the ad banner.
     [UIView animateWithDuration:0.5 animations:^{
@@ -84,7 +88,6 @@
 }
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
-    NSLog(@"Ad Banner action is about to begin.");
     
     self.pauseTimeCounting = YES;
     
@@ -92,7 +95,6 @@
 }
 
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner {
-    NSLog(@"Ad Banner action did finish");
     
     self.pauseTimeCounting = NO;
 }
@@ -173,6 +175,5 @@
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    
 }
 @end
