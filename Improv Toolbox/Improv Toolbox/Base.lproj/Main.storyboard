@@ -30,7 +30,7 @@
                 <tabBarController title="Improv Toolbox" id="49e-Tb-3d3" customClass="ImprovTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Improv Toolbox" id="iek-Im-cEY"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -450,7 +450,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Suggestionator" id="bQQ-CQ-0UA"/>
+                    <tabBarItem key="tabBarItem" title="Suggestionator" image="suggestionator" id="bQQ-CQ-0UA"/>
                     <connections>
                         <outlet property="adView" destination="ee8-74-6Hr" id="rVd-lp-WJz"/>
                         <outlet property="suggestionLabel" destination="L85-Fn-61I" id="qgW-sc-xq2"/>
@@ -490,18 +490,20 @@
                             <constraint firstAttribute="centerY" secondItem="5ZE-SB-Lc1" secondAttribute="centerY" constant="-26" id="lgd-Tg-WXM"/>
                             <constraint firstAttribute="centerY" secondItem="5ZE-SB-Lc1" secondAttribute="centerY" constant="14.5" id="mDZ-20-gVe"/>
                             <constraint firstItem="5ZE-SB-Lc1" firstAttribute="leading" secondItem="s2e-b2-F9U" secondAttribute="leadingMargin" constant="-16" id="qNu-C3-T1P"/>
+                            <constraint firstItem="5ZE-SB-Lc1" firstAttribute="top" secondItem="tnc-Ym-tMf" secondAttribute="bottom" constant="-44" id="tdv-V7-gwR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="JcI-l3-L3m"/>
                                 <exclude reference="MWR-Pe-33b"/>
+                                <exclude reference="NNb-G5-1G5"/>
                                 <exclude reference="PNf-nJ-lmi"/>
                                 <exclude reference="lgd-Tg-WXM"/>
                                 <exclude reference="mDZ-20-gVe"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Twitter" id="ezZ-lY-OHc"/>
+                    <tabBarItem key="tabBarItem" title="Twitter" image="twitter" id="ezZ-lY-OHc"/>
                     <connections>
                         <outlet property="twitterPageWebView" destination="5ZE-SB-Lc1" id="ZJG-8I-wNN"/>
                     </connections>
@@ -649,7 +651,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="HalfLife" id="8hM-qz-Ycg"/>
+                    <tabBarItem key="tabBarItem" title="HalfLife" image="halflife" id="8hM-qz-Ycg"/>
                     <connections>
                         <outlet property="adView" destination="VKL-eX-0b7" id="i9b-m9-1tF"/>
                         <outlet property="timeLabel" destination="rga-tx-1of" id="LUe-qv-kAg"/>
@@ -988,7 +990,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SoundBoard" id="BCR-3N-Q7f"/>
+                    <tabBarItem key="tabBarItem" title="SoundBoard" image="soundboard" id="BCR-3N-Q7f"/>
                     <connections>
                         <outlet property="adView" destination="gnS-TE-5xf" id="2CM-a1-YC4"/>
                     </connections>
@@ -998,4 +1000,10 @@
             <point key="canvasLocation" x="771" y="46"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="halflife" width="30" height="30"/>
+        <image name="soundboard" width="30" height="30"/>
+        <image name="suggestionator" width="30" height="30"/>
+        <image name="twitter" width="30" height="30"/>
+    </resources>
 </document>
