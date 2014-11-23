@@ -92,6 +92,7 @@
             //it hit zero, so sound an alert and stop the thing
             [self playEndOfTimerSound];
             [self resetTimer];
+            [self updateTimerLabel];
         }
     }
 }
