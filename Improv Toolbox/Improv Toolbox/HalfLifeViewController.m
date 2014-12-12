@@ -72,22 +72,32 @@
     [self killTimer];
     
     // increment the cursor
+    [self incrementTimerCursor];
+    
+    [self updateTimer];
+}
+
+- (void) incrementTimerCursor {
     self.timerCursor++;
     // make sure it doesn't go out of bounds
     if(self.timerCursor == [self.timerValues count])
         self.timerCursor--;
 
+}
+
+- (void) updateTimer {
+    // updates the timer value and the timer label ui
+    // because these should be done at the same timer
+    // don't want one updated without the other
     [self updateTimerValue];
-    
-    // update the label
     [self updateTimerLabel];
 }
 
 - (IBAction)resetButton:(id)sender {
     [self resetTimer];
     
-    // update the timer label
-    [self updateTimerLabel];
+    // update the timer
+    [self updateTimer];
 }
 
 - (void)aboutHalfLIfe:(id)sender {
@@ -102,20 +112,32 @@
 }
 
 - (void)updateTimer:(id)sender {
+    // if the timer is going
     if (self.timer) {
+        // decrement the timer value
         self.timerValue--;
+        //update the ui label
         [self updateTimerLabel];
+        
         if(self.timerValue == 0){
             //it hit zero, so sound an alert and stop the thing
             [self playEndOfTimerSound];
-            [self resetTimer];
-            [self updateTimerLabel];
+            
+            //increment the timer cursor
+            [self incrementTimerCursor];
+            
+            //stop the timer
+            [self killTimer];
+            
+            //update the timer value
+            [self updateTimer];
         }
     }
 }
 
 - (void)killTimer{
     if(self.timer){
+        // sets the timer to nil
         [self.timer invalidate];
         self.timer = nil;
     }
@@ -141,12 +163,10 @@
     
     //set the cursor to be 0
     [self resetTimerValue];
-    
-    //update the timer value
-    [self updateTimerValue];
 }
 
 #pragma mark - iAd methods
+// if I wanted to be more OO, should put these in a separate class for one point of access instead of copy pasta'ing
 
 - (void)bannerViewWillLoadAd:(ADBannerView *)banner {
     
