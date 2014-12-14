@@ -78,10 +78,7 @@
 }
 
 - (void) incrementTimerCursor {
-    self.timerCursor++;
-    // make sure it doesn't go out of bounds
-    if(self.timerCursor == [self.timerValues count])
-        self.timerCursor--;
+    self.timerCursor = (self.timerCursor + 1) % [self.timerValues count];
 
 }
 
