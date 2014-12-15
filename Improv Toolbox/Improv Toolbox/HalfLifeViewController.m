@@ -46,10 +46,10 @@
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
     [self.player setDelegate:self];
     
-    self.navigationController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"About"
-                                                                                                   style:UIBarButtonItemStylePlain
-                                                                                                  target:self
-                                                                                                  action:@selector(aboutHalfLIfe:)];
+    self.parentViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"About"
+                                                                                                  style:UIBarButtonItemStylePlain
+                                                                                                 target:self
+                                                                                                 action:@selector(aboutHalfLife:)];
     NSLog(@"Navigation bar items: %@", [self.navigationController.navigationBar items]);
 }
 
@@ -97,10 +97,10 @@
     [self updateTimer];
 }
 
-- (void)aboutHalfLIfe:(id)sender {
+- (void)aboutHalfLife:(id)sender {
     // display a help alert dialog box
     UIAlertView *aboutHalfLife = [[UIAlertView alloc] initWithTitle:@"How to play Half Life"
-                                                            message:@"Players act out a scene for a minute. When the timer ends, act out the SAME SCENE again in half the time.Continue this until the players act out the scene in 1.5 seconds, then take down the scene."
+                                                            message:@"Players act out a scene for a minute. When the timer ends, act out the SAME SCENE again, in half the time. \nContinue this until the players act out the scene in 1.5 seconds, then take down the scene."
                                                            delegate:self
                                                   cancelButtonTitle:@"Got it"
                                                   otherButtonTitles:nil];
@@ -119,6 +119,9 @@
         if(self.timerValue == 0){
             //it hit zero, so sound an alert and stop the thing
             [self playEndOfTimerSound];
+            
+            // check if need to show the "Take it down" alert
+            [self displayTakeItDownQuestionMark];
             
             //increment the timer cursor
             [self incrementTimerCursor];
@@ -153,6 +156,7 @@
 {
     self.timerCursor = 0;
 }
+
 - (void)resetTimer
 {
     // stop the timer
@@ -160,6 +164,20 @@
     
     //set the cursor to be 0
     [self resetTimerValue];
+}
+
+- (void)displayTakeItDownQuestionMark
+{
+    if (self.timerCursor == ([self.timerValues count] - 1)) {
+        // display the take it down alert
+        UIAlertView *takeItDown = [[UIAlertView alloc] initWithTitle:@"Take it Down!"
+                                                                message:nil
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Yep"
+                                                      otherButtonTitles:nil];
+        
+        [takeItDown show];
+    }
 }
 
 #pragma mark - iAd methods
