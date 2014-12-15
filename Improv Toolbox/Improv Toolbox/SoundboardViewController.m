@@ -89,10 +89,8 @@
     [self.effectPlayer stop];
     [self.beatPlayer stop];
     
-    //reset what the beats playing are, one may be playing and we need to set it to NO
-    for (int i = 0; i < [self.beatsPlaying count]; i++) {
-        self.beatsPlaying[i] = @NO;
-    }
+    //reset what the beats playing are,
+    [self resetBeatsPlaying];
 }
 
 #pragma mark - Sound playing methods
@@ -166,11 +164,21 @@
         [self.beatPlayer setVolume:1.0];
         [self.beatPlayer play];
         
+        //set all other beats playing to no
+        [self resetBeatsPlaying];
+        
         self.beatsPlaying[beatNum] = @YES;
     }
     else {
         [self.beatPlayer stop];
         self.beatsPlaying[beatNum] = @NO;
+    }
+}
+
+- (void)resetBeatsPlaying
+{
+    for (int i = 0; i < [self.beatsPlaying count]; i++) {
+        self.beatsPlaying[i] = @NO;
     }
 }
 

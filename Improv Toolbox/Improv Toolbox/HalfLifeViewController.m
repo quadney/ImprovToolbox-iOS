@@ -45,12 +45,20 @@
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"buzzer" ofType:@"mp3"]];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
     [self.player setDelegate:self];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     self.parentViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"About"
-                                                                                                  style:UIBarButtonItemStylePlain
-                                                                                                 target:self
-                                                                                                 action:@selector(aboutHalfLife:)];
-    NSLog(@"Navigation bar items: %@", [self.navigationController.navigationBar items]);
+                                                                                                   style:UIBarButtonItemStylePlain
+                                                                                                  target:self
+                                                                                                  action:@selector(aboutHalfLife:)];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    //remove the About button
+    self.parentViewController.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)didReceiveMemoryWarning {
