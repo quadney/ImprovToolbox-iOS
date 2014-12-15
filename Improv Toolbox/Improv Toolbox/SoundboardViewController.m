@@ -29,7 +29,7 @@
 - (IBAction)beat2Sound:(id)sender;
 - (IBAction)beat3Sound:(id)sender;
 
-@property (nonatomic) BOOL beatSoundPlaying;
+@property (nonatomic) NSMutableArray *beatsPlaying;
 
 @property (weak, nonatomic) IBOutlet ADBannerView *adView;
 @property (nonatomic, strong) NSTimer *adTimer;
@@ -69,14 +69,32 @@
     //default 1.0
     self.volume = 1.0;
     
+    self.beatsPlaying = [[NSMutableArray alloc] initWithObjects:@NO, @NO, @NO, nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didEnterBackground:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
     
 }
 
-//- (void)viewWillDisappear:(BOOL)animated {
-//    //stop the sound from playing
-//    [self.effectPlayer stop];
-//    [self.beatPlayer stop];
-//}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    // remove the observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)didEnterBackground:(id)sender {
+    NSLog(@"app did enter background");
+    //stop the sound from playing
+    [self.effectPlayer stop];
+    [self.beatPlayer stop];
+    
+    //reset what the beats playing are, one may be playing and we need to set it to NO
+    for (int i = 0; i < [self.beatsPlaying count]; i++) {
+        self.beatsPlaying[i] = @NO;
+    }
+}
 
 #pragma mark - Sound playing methods
 
@@ -117,15 +135,15 @@
 }
 
 - (IBAction)beat1Sound:(id)sender {
-    [self playBeatSound:@"beat1"];
+    [self playBeatSound:@"beat1" withBeat:0];
 }
 
 - (IBAction)beat2Sound:(id)sender {
-    [self playBeatSound:@"beat2"];
+    [self playBeatSound:@"beat2" withBeat:1];
 }
 
 - (IBAction)beat3Sound:(id)sender {
-    [self playBeatSound:@"beat3"];
+    [self playBeatSound:@"beat3" withBeat:2];
 }
 
 - (void)playSound:(NSString *)trackTitle
@@ -138,10 +156,10 @@
     [self.effectPlayer play];
 }
 
-- (void)playBeatSound:(NSString *)trackTitle
+- (void)playBeatSound:(NSString *)trackTitle withBeat:(int)beatNum
 {
-    if (!self.beatSoundPlaying) {
-        //committing bad OOP but #yolo 
+    if (![self.beatsPlaying[beatNum] boolValue]) {
+        // if this beat is playing, stop it
         NSString *soundPath = [[NSBundle mainBundle] pathForResource:trackTitle ofType:@"mp3"];
         NSURL *url = [NSURL fileURLWithPath:soundPath];
         self.beatPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:NULL];
@@ -149,11 +167,11 @@
         [self.beatPlayer setVolume:1.0];
         [self.beatPlayer play];
         
-        self.beatSoundPlaying = TRUE;
+        self.beatsPlaying[beatNum] = @YES;
     }
     else {
         [self.beatPlayer stop];
-        self.beatSoundPlaying = FALSE;
+        self.beatsPlaying[beatNum] = @NO;
     }
 }
 
