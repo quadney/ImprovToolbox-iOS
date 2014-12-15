@@ -85,7 +85,6 @@
 }
 
 - (void)didEnterBackground:(id)sender {
-    NSLog(@"app did enter background");
     //stop the sound from playing
     [self.effectPlayer stop];
     [self.beatPlayer stop];
